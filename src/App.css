@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+*{margin: 0;padding: 0;}
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+
+.app-wrapper{
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-template-areas: "h h"
+  "n c";
+  width: 1200px;
+  margin: 0 auto;
+}
+.app-wrapper-content {
+  grid-area: c;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav{
+  grid-area: n;
+}
+.header {
+  grid-area: h;
+  background: #eeeeee;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header img {
+  max-height: 100%;
+}
+.nav {
+  grid-area: n;
+  border-right: 1px solid #eeeeee;
+  border-top: #ffffff ;
+  background: #d2d6e1;
+}
+nav div a{
+  color: #f7f7f7;
+  text-decoration: none;
+  font-family: 'Fugaz One', cursive;
+  font-size: 26px;
+  border-bottom: 5px solid #f7f7f7;
+  display: block;
+  text-transform: uppercase;
+  line-height: 16px;
+  padding-top: 20px;
+  transition: 0.5s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav div a:hover,.active{
+  color: #b66ee9;
+  padding-left: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-header{
+  overflow: hidden;
+  height: 300px;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-header img {
+  width:100%;
 }
