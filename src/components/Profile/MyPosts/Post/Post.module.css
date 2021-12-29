@@ -1,0 +1,30 @@
+.item{
+    padding: 10px;
+    border-radius: 3px;
+    background: #e6eaf5;
+    margin: 10px;
+    color: #6b6b6b;
+    overflow: hidden;
+}
+.imageHolder{
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+}
+.item img{
+    width: initial;
+    max-height: 100%;
+    margin-left: -50%;
+}
+.item a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 10px;
+    background: #163449;
+    padding: 0 6px;
+    border-radius: 3px;
+
+}

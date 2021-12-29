@@ -1,0 +1,9 @@
+.profile-header{
+    overflow: hidden;
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+.profile-header img {
+    width:100%;
+}

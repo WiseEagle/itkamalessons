@@ -14,47 +14,4 @@
   grid-area: c;
 }
 
-.nav{
-  grid-area: n;
-}
-.header {
-  grid-area: h;
-  background: #eeeeee;
-}
 
-.header img {
-  max-height: 100%;
-}
-.nav {
-  grid-area: n;
-  border-right: 1px solid #eeeeee;
-  border-top: #ffffff ;
-  background: #d2d6e1;
-}
-nav div a{
-  color: #f7f7f7;
-  text-decoration: none;
-  font-family: 'Fugaz One', cursive;
-  font-size: 26px;
-  border-bottom: 5px solid #f7f7f7;
-  display: block;
-  text-transform: uppercase;
-  line-height: 16px;
-  padding-top: 20px;
-  transition: 0.5s;
-}
-
-nav div a:hover,.active{
-  color: #b66ee9;
-  padding-left: 15px;
-}
-
-.profile-header{
-  overflow: hidden;
-  height: 300px;
-  margin-bottom: 10px;
-}
-
-.profile-header img {
-  width:100%;
-}
