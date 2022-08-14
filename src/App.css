@@ -10,38 +10,4 @@
     "n c";
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
-
-
 }
-
-.header{
-    grid-area: h;
-    background: #eee;
-}
-.header img {
-    max-height: 100%;
-}
-.nav{
-    grid-area: n;
-    border-right: 1px solid #eeeeee;
-    border-top: #ffffff ;
-    background: #d2d6e1;
-
-}
-.nav div{
-    color: #f7f7f7;
-    text-decoration: none;
-    font-family: "Fugaz One",cursive;
-    font-size: 26px;
-    border-bottom: 5px solid #f7f7f7;
-    display: block;
-    text-transform: uppercase;
-    line-height: 16px;
-    padding-top: 20px;
-    transition: .5s;
-}
-.nav div:hover,.active{
-    color: #b66ee9;
-    padding-left: 15px;
-}
-.content{grid-area: c;}

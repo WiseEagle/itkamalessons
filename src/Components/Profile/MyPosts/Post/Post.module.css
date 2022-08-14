@@ -1,0 +1,38 @@
+.item{
+    padding: 10px;
+    border-radius: 3px;
+    background: #e6eaf5;
+    margin: 10px;
+    color: #6b6b6b;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: "i m l";
+    grid-template-columns: 50px 1fr 50px;
+    grid-gap: 10px;
+}
+.image {
+    border-radius: 50%;
+    background: #d6cee5;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    grid-area: i;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image img {
+    width: 70%;
+}
+.message {
+    grid-area: m;
+
+}
+.like {
+    grid-area: l;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

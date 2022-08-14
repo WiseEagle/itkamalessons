@@ -1,0 +1,7 @@
+.header{
+    grid-area: h;
+    background: #eee;
+}
+.header img {
+    max-height: 100%;
+}

@@ -2,9 +2,9 @@ import "./App.css";
 import bg from "./bg.png";
 import logo from "./logo.png";
 import user from "./user.png";
-import Header from "./Header";
-import Navbar from "./Navbar";
-import Profile from "./Profile";
+import Header from "./Components/Header/Header";
+import Navbar from "./Components/Navbar/Navbar";
+import Profile from "./Components/Profile/Profile";
 import React from "react";
 
 
