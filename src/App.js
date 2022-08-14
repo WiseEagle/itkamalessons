@@ -1,11 +1,9 @@
+import React from "react";
 import "./App.css";
-import bg from "./bg.png";
-import logo from "./logo.png";
-import user from "./user.png";
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
-import React from "react";
+import Dialogs from "./Components/Dialogs/Dialogs";
 
 
 const App = () => {
@@ -13,7 +11,10 @@ const App = () => {
         <div className="app-wrapper">
             <Header />
             <Navbar />
-            <Profile />
+            <div className="app-wrapper-content">
+                <Profile />
+                <Dialogs />
+            </div>
         </div>
     );
 }
