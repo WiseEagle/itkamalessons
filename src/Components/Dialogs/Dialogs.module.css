@@ -7,7 +7,7 @@
     border-top: #ffffff;
     margin-left: 10px;
 }
-.dialog a{
+.dialog{
     color: #707b9d;
     text-decoration: none;
     font-family: 'Fugaz One', cursive;
@@ -20,7 +20,7 @@
     transition: 0.5s;
 }
 
-.dialog a:hover, .active a{
+.dialog:hover, .active{
     color: #8f63ae;
     padding-left: 15px;
 }
