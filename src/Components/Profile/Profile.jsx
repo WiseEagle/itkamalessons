@@ -6,7 +6,7 @@ import MyPosts from "./MyPosts/MyPosts";
 const Profile = () => {
     return (
         <div>
-            <div>
+            <div className={s.mainbg}>
                 <img src={bg} alt=""/>
             </div>
             <div>
