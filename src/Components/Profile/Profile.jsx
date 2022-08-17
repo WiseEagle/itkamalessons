@@ -10,7 +10,7 @@ const Profile = () => {
                 <img src={bg} alt=""/>
             </div>
             <div>
-                <img src={user} alt=""/> + desc
+                <img src={user} alt=""/> and desc
             </div>
             <MyPosts/>
         </div>
