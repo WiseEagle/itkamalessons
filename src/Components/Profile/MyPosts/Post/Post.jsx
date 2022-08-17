@@ -1,5 +1,4 @@
 import React from "react";
-import bg from "../../../../bg.png";
 import userMessage from "../../../../user-message.png";
 import s from "./Post.module.css";
 
