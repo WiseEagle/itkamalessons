@@ -21,7 +21,7 @@ jobs:
       - name: rsync deploy
         uses: burnett01/rsync-deployments@5.2
         with:
-          switches: -avzr --exclude='/src' --exclude='/src' --exclude='/public' --exclude='/node_modules' --exclude='/.idea' --exclude='/.github' --exclude='/.git' --exclude="*/" --delete
+          switches: -avzr build/ --exclude='/src' --exclude='/src' --exclude='/public' --exclude='/node_modules' --exclude='/.idea' --exclude='/.github' --exclude='/.git' --delete
           path: .
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_user: ${{ secrets.REMOTE_USER }}
