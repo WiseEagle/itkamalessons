@@ -1,17 +1,10 @@
-import bg from "../../bg.png";
-import user from "../../user.png";
-import s from "./Profile.module.css";
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
     return (
         <div>
-            <div className={s.mainbg}>
-                <img src={bg} alt=""/>
-            </div>
-            <div>
-                <img src={user} alt=""/> and desc
-            </div>
+            <ProfileInfo/>
             <MyPosts/>
         </div>
     );

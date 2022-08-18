@@ -1,0 +1,27 @@
+.postMessage{
+    padding: 10px;
+}
+.postMessage textarea{
+    height: 60px ;
+    width: 100%;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+}
+
+.postMessage button{
+    height: 40px;
+    width: 80px;
+    line-height: 40px;
+    border:none;
+    color:#ffffff;
+    background: #d2d6e1;
+    text-transform: uppercase;
+    transition: 0.5s;
+    border-radius: 3px;
+}
+.postMessage button:hover{
+    background: #b66ee9;
+}
+.myPostsBlock h3 {
+    padding: 10px;
+}
