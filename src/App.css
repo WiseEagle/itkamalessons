@@ -7,8 +7,12 @@
     display: grid;
     grid-template-areas:
     "h h"
-    "n c";
+    "s c";
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
 }
 .app-wrapper-content{grid-area: c;}
+.sidebar{
+    grid-area: s;
+    background: #d2d6e1;
+}

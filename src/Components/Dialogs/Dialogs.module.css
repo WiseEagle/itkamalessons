@@ -35,4 +35,24 @@
     margin: 10px;
     color: #6b6b6b;
     overflow: hidden;
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+}
+.messageImage{
+    display: block;
+    width: 50px;
+    height: 50px;
+
+}
+.messageContent{
+
+}
+
+.myMessage {
+    flex-direction: row-reverse;
+    background: #f0ebfb;
+    margin-left: calc(20% - 20px);
+    margin-left: -webkit-calc(20% - 20px);
+    margin-left: -moz-calc(20% - 20px);
 }
