@@ -3,10 +3,10 @@ import userPict from "./../user-message.png";
 let state = {
     profilePage: {
         posts: [
-            {id: 1, message: "Some mesage 1", likeCount: "3"},
-            {id: 2, message: "Some mesage 2", likeCount: "6"},
-            {id: 3, message: "Some mesage 3", likeCount: "1"},
-            {id: 4, message: "Some mesage 4", likeCount: "0"}
+            {id: 1, message: "Some mesage 1", likeCount: 3},
+            {id: 2, message: "Some mesage 2", likeCount: 6},
+            {id: 3, message: "Some mesage 3", likeCount: 1},
+            {id: 4, message: "Some mesage 4", likeCount: 8}
         ]
     },
     dialogsPage: {
@@ -33,8 +33,15 @@ let state = {
             {id: 3, name:"Muskin", image: userPict},
         ]
     }
-
-
 }
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likeCount: 0
+    };
+    state.profilePage.posts.push(newPost);
+};
 
 export default state;
