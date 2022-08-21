@@ -1,4 +1,5 @@
 import userPict from "./../user-message.png";
+import {rerenderEntireTree} from "../render";
 
 let state = {
     profilePage: {
@@ -37,11 +38,12 @@ let state = {
 
 export let addPost = (postMessage) => {
     let newPost = {
-        id: 5,
+        id: state.profilePage.posts.length + 1,
         message: postMessage,
         likeCount: 0
     };
     state.profilePage.posts.push(newPost);
+    rerenderEntireTree(state);
 };
 
 export default state;
