@@ -55,3 +55,44 @@
     margin-left: calc(20% - 20px);
     margin-left: -webkit-calc(20% - 20px);
 }
+.messagesArea {}
+.newMessage {
+    display: grid;
+    grid-template-areas: "m b";
+    grid-template-columns: 1fr 100px;
+    grid-gap: 10px;
+    padding: 10px;
+}
+.newMessageArea {
+    grid-area: m;
+}
+.newMessageArea textarea {
+    height: 60px ;
+    width: 100%;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+    width: 100%;
+}
+.newMessageButton {
+    grid-area: b;
+}
+.newMessageButton button {
+    height: 40px;
+    width: 80px;
+    line-height: 40px;
+    border:none;
+    color:#ffffff;
+    background: #d2d6e1;
+    text-transform: uppercase;
+    transition: 0.5s;
+    border-radius: 3px;
+}
+.newMessageButton button:hover {
+    background: #b66ee9;
+}
+.postMessage textarea{
+    height: 60px ;
+    width: 100%;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+}
