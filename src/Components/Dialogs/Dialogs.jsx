@@ -6,16 +6,16 @@ import user from "../../user-message.png";
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.state.dialogs.map(d => (
+    let dialogsElements = props.dialogsPage.dialogs.map(d => (
             <React.Fragment key={d.id}>
                 <DialogItem id={d.id} name={d.name}/>
             </React.Fragment>
         )
     );
 
-    let messagesElements = props.state.messages.map(m => (
+    let messagesElements = props.dialogsPage.messages.map(m => (
             <React.Fragment key={m.id}>
-                <Message userImg={user} message={m.message}  myMessage={m.myMessage}/>
+                <Message userImg={user} message={m.message} myMessage={m.myMessage}/>
             </React.Fragment>
         )
     );
@@ -23,9 +23,13 @@ const Dialogs = (props) => {
     let textMessage = React.createRef();
 
     let addMessage = () => {
-        console.log(textMessage.current.value);
+        props.addMessage();
     };
 
+    let updateMessage = () => {
+        let messageText = textMessage.current.value
+        props.updateNewMessageText(messageText);
+    };
 
     return (
         <div className={s.dialogs}>
@@ -35,8 +39,12 @@ const Dialogs = (props) => {
                     {messagesElements}
                 </div>
                 <div className={s.newMessage}>
-                    <div className={s.newMessageArea}><textarea ref={textMessage}></textarea></div>
-                    <div className={s.newMessageButton}><button onClick={addMessage}>Add message</button></div>
+                    <div className={s.newMessageArea}>
+                        <textarea ref={textMessage} onChange={updateMessage} value={props.dialogsPage.newMessageText}></textarea>
+                    </div>
+                    <div className={s.newMessageButton}>
+                        <button onClick={addMessage}>Add message</button>
+                    </div>
                 </div>
 
             </div>

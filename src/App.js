@@ -7,7 +7,6 @@ import Dialogs from "./Components/Dialogs/Dialogs";
 import Sidebar from "./Components/Sidebar/Sidebar"
 import {Route, Routes} from "react-router-dom";
 
-
 const App = (props) => {
 
     return (
@@ -19,9 +18,18 @@ const App = (props) => {
             </div>
             <div className="app-wrapper-content">
                 <Routes>
-                    <Route path="/" element={<Profile state={props.state.profilePage} addPost={props.addPost}/>}/>
+                    <Route path="/" element={<Profile
+                        profilePage={props.state.profilePage}
+                        addPost={props.addPost}
+                        updateNewPostText={props.updateNewPostText}
+                    />}/>
+
                     <Route path="/dialogs/*"
-                           element={<Dialogs state={props.state.dialogsPage}/>}/>
+                           element={<Dialogs
+                               dialogsPage={props.state.dialogsPage}
+                               addMessage={props.addMessage}
+                               updateNewMessageText={props.updateNewMessageText}
+                           />}/>
                 </Routes>
             </div>
         </div>
