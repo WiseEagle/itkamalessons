@@ -6,6 +6,7 @@ import Profile from "./Components/Profile/Profile";
 import Dialogs from "./Components/Dialogs/Dialogs";
 import Sidebar from "./Components/Sidebar/Sidebar"
 import {Route, Routes} from "react-router-dom";
+import MyFuture from "./Components/MyFuture/MyFuture";
 
 const App = (props) => {
 
@@ -25,6 +26,12 @@ const App = (props) => {
 
                     <Route path="/dialogs/*"
                            element={<Dialogs
+                               dialogsPage={props.state.dialogsPage}
+                               dispatch={props.dispatch}
+                           />}/>
+
+                    <Route path="/myfuture/*"
+                           element={<MyFuture
                                dialogsPage={props.state.dialogsPage}
                                dispatch={props.dispatch}
                            />}/>

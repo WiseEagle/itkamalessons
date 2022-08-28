@@ -2,8 +2,8 @@ import userPict from "./../user-message.png";
 
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const ADD_POST = "ADD-POST";
-const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
+const SEND_MESSAGE = "SEND-MESSAGE";
+const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-TEXT";
 
 let store = {
     _state: {
@@ -32,7 +32,7 @@ let store = {
                 {id: 3, message: "Yes! I learn everyday!", myMessage: true},
                 {id: 4, message: "Ok, nice job!", myMessage: false}
             ],
-            newMessageText: ""
+            newMessageBody: ""
         },
         sidebar: {
             friends: [
@@ -49,6 +49,7 @@ let store = {
     getState() {
         return this._state;
     },
+    /*subscribe on observer function, in our case it's rerenderEntireTree*/
     subscribe(observer) {
         this._callSubscriber = observer; //pattern observer
     },
@@ -66,17 +67,17 @@ let store = {
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
-        } else if (action.type === ADD_MESSAGE) {
+        } else if (action.type === SEND_MESSAGE) {
             let newMessage = {
                 id: this._state.dialogsPage.messages.length + 1,
-                message: this._state.dialogsPage.newMessageText,
+                message: this._state.dialogsPage.newMessageBody,
                 myMessage: true
             };
             this._state.dialogsPage.messages.push(newMessage);
-            this._state.dialogsPage.newMessageText = "";
+            this._state.dialogsPage.newMessageBody = "";
             this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-            this._state.dialogsPage.newMessageText = action.newText;
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.body;
             this._callSubscriber(this._state);
         }
 
@@ -87,9 +88,9 @@ export const addPostActionCreator = () => ({type: ADD_POST});
 export const updateNewPostTextActionCreator = (text) => ({
     type: UPDATE_NEW_POST_TEXT, newText: text
 });
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
-export const updateNewMessageTextActionCreator = (text) => ({
-    type: UPDATE_NEW_MESSAGE_TEXT, newText: text
+export const sendMessageCreator = () => ({type: SEND_MESSAGE});
+export const updateNewMessageBodyCreator = (body) => ({
+    type: UPDATE_NEW_MESSAGE_BODY, body: body
 });
 
 window.store = store;
