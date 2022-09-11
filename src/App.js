@@ -7,6 +7,7 @@ import Sidebar from "./Components/Sidebar/Sidebar"
 import {Route, Routes} from "react-router-dom";
 import MyFuture from "./Components/MyFuture/MyFuture";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
+import MyFutureContainer from "./Components/MyFuture/MyFutureContainer";
 
 const App = (props) => {
 
@@ -25,7 +26,7 @@ const App = (props) => {
                            element={<DialogsContainer store={props.store} />}/>
 
                     <Route path="/myfuture/*"
-                           element={<MyFuture store={props.store} />}/>
+                           element={<MyFutureContainer store={props.store} />}/>
                 </Routes>
             </div>
         </div>

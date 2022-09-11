@@ -43,6 +43,10 @@ const goalsReducer = (state = initialState, action) => {
                 description: state.newGoal.newGoalDesc
             }
             state.goals.push(newGoal);
+            state.newGoal.newGoalName = "";
+            state.newGoal.newGoalPict = "";
+            state.newGoal.newGoalDate = "";
+            state.newGoal.newGoalDesc = "";
             return state;
 
         default:
