@@ -25,3 +25,7 @@
 .myPostsBlock h3 {
     padding: 10px;
 }
+.posts{
+    border-top:1px solid #dddddd;
+    padding-top: 5px;
+}

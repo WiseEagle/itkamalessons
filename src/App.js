@@ -3,10 +3,10 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
-import Dialogs from "./Components/Dialogs/Dialogs";
 import Sidebar from "./Components/Sidebar/Sidebar"
 import {Route, Routes} from "react-router-dom";
 import MyFuture from "./Components/MyFuture/MyFuture";
+import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 
 const App = (props) => {
 
@@ -19,22 +19,13 @@ const App = (props) => {
             </div>
             <div className="app-wrapper-content">
                 <Routes>
-                    <Route path="/" element={<Profile
-                        profilePage={props.state.profilePage}
-                        dispatch={props.dispatch}
-                    />}/>
+                    <Route path="/" element={<Profile store={props.store} />}/>
 
                     <Route path="/dialogs/*"
-                           element={<Dialogs
-                               dialogsPage={props.state.dialogsPage}
-                               dispatch={props.dispatch}
-                           />}/>
+                           element={<DialogsContainer store={props.store} />}/>
 
                     <Route path="/myfuture/*"
-                           element={<MyFuture
-                               dialogsPage={props.state.dialogsPage}
-                               dispatch={props.dispatch}
-                           />}/>
+                           element={<MyFuture store={props.store} />}/>
                 </Routes>
             </div>
         </div>

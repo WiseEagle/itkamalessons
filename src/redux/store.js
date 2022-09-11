@@ -35,7 +35,7 @@ let store = {
         },
         goalsPage: {
           goals:[
-              {id: 1, name: "React", pict: "", estimate: "", description: ""},
+              {id: 1, name: "React", pict: "", estimate: "10-10-10", description: ""},
               {id: 2, name: "Node", pict: "", estimate: "", description: ""}
           ],
           newGoal: {
