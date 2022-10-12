@@ -19,27 +19,29 @@ let initialState = {
     ],
     newMessageBody: ""
 }
-
+/*clear function immutable, create copy state*/
 const dialogsReducer = (state = initialState, action) => {
 
+    /*return new copy of object with changes*/
     switch (action.type){
-        case SEND_MESSAGE:{
+
+
+        case SEND_MESSAGE:
             let newMessage = {
                 id: state.messages.length + 1,
                 message: state.newMessageBody,
                 myMessage: true
             };
-            let stateCopy = {...state};
-            stateCopy.messages = [...state.messages];
-            stateCopy.messages.push(newMessage);
-            stateCopy.newMessageBody = "";
-            return stateCopy;
-        }
-        case UPDATE_NEW_MESSAGE_BODY:{
-            let stateCopy = {...state};
-            stateCopy.newMessageBody = action.body;
-            return stateCopy;
-        }
+            return {
+                ...state,
+                messages: [...state.messages, newMessage],
+                newMessageBody: ""
+            };
+        case UPDATE_NEW_MESSAGE_BODY:
+            return {
+                ...state,
+                newMessageBody: action.body
+            };
         default:
             return state;
     }

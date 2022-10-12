@@ -22,49 +22,57 @@ let initialState = {
 const goalsReducer = (state = initialState, action) => {
 
     switch (action.type){
-        case CHANGE_GOAL_NAME: {
-            let stateCopy = {...state};
-            stateCopy.newGoal = {...state.newGoal};
-            stateCopy.newGoal.newGoalName = action.goalName;
-            return stateCopy;
-        }
-        case CHANGE_GOAL_PICT: {
-            let stateCopy = {...state};
-            stateCopy.newGoal = {...state.newGoal};
-            stateCopy.newGoal.newGoalPict = action.goalPict;
-            return stateCopy;
-        }
-        case CHANGE_GOAL_DATE: {
-            let stateCopy = {...state};
-            stateCopy.newGoal = {...state.newGoal};
-            stateCopy.newGoal.newGoalDate = action.goalDate;
-            return stateCopy;
-        }
-        case CHANGE_GOAL_DESC: {
-            let stateCopy = {...state};
-            stateCopy.newGoal = {...state.newGoal};
-            stateCopy.newGoal.newGoalDesc = action.goalDesc;
-            return stateCopy;
-        }
-        case ADD_GOAL: {
-            let stateCopy = {...state};
-            stateCopy.newGoal = {...state.newGoal};
-            stateCopy.goals = [...state.goals];
-            let newGoal = {
-                id: stateCopy.goals.length + 1,
-                name: stateCopy.newGoal.newGoalName,
-                pict: stateCopy.newGoal.newGoalPict,
-                estimate: stateCopy.newGoal.newGoalDate,
-                description: stateCopy.newGoal.newGoalDesc
+        case CHANGE_GOAL_NAME:
+            return {
+                ...state,
+                newGoal: {
+                    ...state.newGoal,
+                    newGoalName: action.goalName
+                },
             }
-            stateCopy.goals.push(newGoal);
-            stateCopy.newGoal.newGoalName = "";
-            stateCopy.newGoal.newGoalPict = "";
-            stateCopy.newGoal.newGoalDate = "";
-            stateCopy.newGoal.newGoalDesc = "";
-            return stateCopy; 
-        }
-
+        case CHANGE_GOAL_PICT:
+            return {
+                ...state,
+                newGoal: {
+                    ...state.newGoal,
+                    newGoalPict: action.goalPict
+                },
+            }
+        case CHANGE_GOAL_DATE:
+            return {
+                ...state,
+                newGoal: {
+                    ...state.newGoal,
+                    newGoalDate: action.goalDate
+                },
+            }
+        case CHANGE_GOAL_DESC:
+            return {
+                ...state,
+                newGoal: {
+                    ...state.newGoal,
+                    newGoalDesc: action.goalDesc
+                },
+            }
+        case ADD_GOAL:
+            let newGoal = {
+                id: state.goals.length + 1,
+                name: state.newGoal.newGoalName,
+                pict: state.newGoal.newGoalPict,
+                estimate: state.newGoal.newGoalDate,
+                description: state.newGoal.newGoalDesc
+            }
+            return {
+                ...state,
+                newGoal: {
+                    ...state.newGoal,
+                    newGoalName: "",
+                    newGoalPict: "",
+                    newGoalDate: "",
+                    newGoalDesc: ""
+                },
+                goals: [...state.goals, newGoal]
+            }
         default:
             return state;
     }
