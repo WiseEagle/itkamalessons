@@ -22,32 +22,48 @@ let initialState = {
 const goalsReducer = (state = initialState, action) => {
 
     switch (action.type){
-        case CHANGE_GOAL_NAME:
-            state.newGoal.newGoalName = action.goalName;
-            return state;
-        case CHANGE_GOAL_PICT:
-            state.newGoal.newGoalPict = action.goalPict;
-            return state;
-        case CHANGE_GOAL_DATE:
-            state.newGoal.newGoalDate = action.goalDate;
-            return state;
-        case CHANGE_GOAL_DESC:
-            state.newGoal.newGoalDesc = action.goalDesc;
-            return state;
-        case ADD_GOAL:
+        case CHANGE_GOAL_NAME: {
+            let stateCopy = {...state};
+            stateCopy.newGoal = {...state.newGoal};
+            stateCopy.newGoal.newGoalName = action.goalName;
+            return stateCopy;
+        }
+        case CHANGE_GOAL_PICT: {
+            let stateCopy = {...state};
+            stateCopy.newGoal = {...state.newGoal};
+            stateCopy.newGoal.newGoalPict = action.goalPict;
+            return stateCopy;
+        }
+        case CHANGE_GOAL_DATE: {
+            let stateCopy = {...state};
+            stateCopy.newGoal = {...state.newGoal};
+            stateCopy.newGoal.newGoalDate = action.goalDate;
+            return stateCopy;
+        }
+        case CHANGE_GOAL_DESC: {
+            let stateCopy = {...state};
+            stateCopy.newGoal = {...state.newGoal};
+            stateCopy.newGoal.newGoalDesc = action.goalDesc;
+            return stateCopy;
+        }
+        case ADD_GOAL: {
+            let stateCopy = {...state};
+            stateCopy.newGoal = {...state.newGoal};
+            stateCopy.goals = [...state.goals];
             let newGoal = {
-                id: state.goals.length + 1,
-                name: state.newGoal.newGoalName,
-                pict: state.newGoal.newGoalPict,
-                estimate: state.newGoal.newGoalDate,
-                description: state.newGoal.newGoalDesc
+                id: stateCopy.goals.length + 1,
+                name: stateCopy.newGoal.newGoalName,
+                pict: stateCopy.newGoal.newGoalPict,
+                estimate: stateCopy.newGoal.newGoalDate,
+                description: stateCopy.newGoal.newGoalDesc
             }
-            state.goals.push(newGoal);
-            state.newGoal.newGoalName = "";
-            state.newGoal.newGoalPict = "";
-            state.newGoal.newGoalDate = "";
-            state.newGoal.newGoalDesc = "";
-            return state;
+            stateCopy.goals.push(newGoal);
+            stateCopy.newGoal.newGoalName = "";
+            stateCopy.newGoal.newGoalPict = "";
+            stateCopy.newGoal.newGoalDate = "";
+            stateCopy.newGoal.newGoalDesc = "";
+            return stateCopy; 
+        }
 
         default:
             return state;

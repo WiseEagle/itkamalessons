@@ -7,50 +7,45 @@ import {
     goalPictCreator
 } from "../../redux/goals-reducer";
 import MyFuture from "./MyFuture";
+import {connect} from "react-redux";
 
 
-const MyFutureContainer = (props) => {
-
-    let state = props.store.getState();
-
-    let onChangeGoalName = (name) => {
-        props.store.dispatch(goalNameCreator(name));
-    };
-    let onChangeGoalPict = (pict) => {
-        props.store.dispatch(goalPictCreator(pict));
-    };
-    let onChangeGoalDate = (date) => {
-        props.store.dispatch(goalDateCreator(date));
-    };
-    let onChangeGoalDesc = (desc) => {
-        props.store.dispatch(goalDescCreator(desc));
-    };
-    let addGoal = () => {
-        props.store.dispatch(addGoalCreator());
-    };
-
-    let estimateDates = state.goalsPage.goals.map((goal) => {
-        let date = getMonthYear(goal.estimate);
-        return <div key={goal.id}>{date.month} <span>{date.year}</span></div>
-    });
-
-    let skills = state.goalsPage.goals.map((goal) => {
-        return <div key={goal.id}>{goal.name}</div>
-    });
-
-    let pictures = state.goalsPage.goals.map((goal) => {
-        return <img src={goal.pict} />
-    });
-
-
-    return (<MyFuture state={state} changeGoalName={onChangeGoalName}
-                      changeGoalPict={onChangeGoalPict}
-                      changeGoalDate={onChangeGoalDate}
-                      changeGoalDesc={onChangeGoalDesc}
-                      addGoal={addGoal}
-                      pictures={pictures}
-                      estimateDates={estimateDates}
-                      skills={skills}/> )
+let mapStateToProps = (state) => {
+    return {
+        state: state,
+        pictures:state.goalsPage.goals.map((goal) => {
+            return <img  key={goal.id} src={goal.pict} />
+        }),
+        estimateDates:state.goalsPage.goals.map((goal) => {
+            let date = getMonthYear(goal.estimate);
+            return <div key={goal.id}>{date.month} <span>{date.year}</span></div>
+        }),
+        skills:state.goalsPage.goals.map((goal) => {
+            return <div key={goal.id}>{goal.name}</div>
+        })
+    }
 }
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        changeGoalName:(name) => {
+            dispatch(goalNameCreator(name));
+        },
+        changeGoalPict:(pict) => {
+            dispatch(goalPictCreator(pict));
+        },
+        changeGoalDate:(date) => {
+            dispatch(goalDateCreator(date));
+        },
+        changeGoalDesc:(desc) => {
+            dispatch(goalDescCreator(desc));
+        },
+        addGoal:() => {
+            dispatch(addGoalCreator());
+        }
+    }
+}
+
+const MyFutureContainer = connect(mapStateToProps,mapDispatchToProps)(MyFuture);
 
 export default MyFutureContainer;
