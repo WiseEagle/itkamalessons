@@ -15,7 +15,10 @@ let initialState = {
         {id: 1, message: "Hi, how your learning", myMessage: false},
         {id: 2, message: "Do you learn?", myMessage: false},
         {id: 3, message: "Yes! I learn everyday!", myMessage: true},
-        {id: 4, message: "Ok, nice job!", myMessage: false}
+        {id: 4, message: "Ok, nice job!", myMessage: false},
+        {id: 5, message: "Please back to study!", myMessage: false},
+        {id: 6, message: "Yes! I learn now!", myMessage: true}
+
     ],
     newMessageBody: ""
 }
